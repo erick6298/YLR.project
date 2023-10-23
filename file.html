@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Learning Resources</title>
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1 class="headline">My Learning Resources</h1>
+                <p>This is an app used to house resources you may use while learning a new skill.</p>
+            </div>
+            <form>
+                <label for="videoId">Video Id</label>
+                <input type="text" name="videoId" id="videoId" placeholder="DF9&DFF6">
+                <button onclick="saveVideo(event)">Save the Video!</button>
+            </form>
+        </div>
+        
+    </div>
+    <ul id="videosContainer"></ul>
+    <div id="popup" onclick="handlePopupClick()" class="closed">
+        <iframe width="560" height="315"
+        frame-border="0"
+        allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen></iframe>
+
+
+    </div>
+    
+    <script src="script.js"> </script>
+</body>
+</html>
