@@ -35,13 +35,18 @@ const clickVideo = (event, id) => {
 
 };
 
-const saveVideo = (e)=> {
+const saveVideo = (e) => {
     e.preventDefault();
-    const videoId = videoIdInput.value;
-    youTubeVideoIds.unshift(videoId);
-    videoIdInput.value = "";
-    localStorage.setItem(IDS_Key, JSON.stringify(youTubeVideoIds));
-displayVideos();
+    const videoId = videoIdInput.value.trim(); // Trim to remove leading/trailing whitespace
+    if (videoId) {
+        youTubeVideoIds.unshift(videoId);
+        videoIdInput.value = "";
+        localStorage.setItem(IDS_Key, JSON.stringify(youTubeVideoIds));
+        displayVideos();
+    } else {
+        // Handle the case where the input is empty or only contains whitespace
+        alert("Please enter a valid YouTube video ID.");
+    }
 };
 
 const handlePopupClick = () => {
