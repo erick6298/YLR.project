@@ -142,3 +142,9 @@ iframe {
     transform: translateY(-100vh);
     opacity: 0;
 }
+
+li {
+    max-width: 800px; 
+    max-height: 450px; 
+    margin: 10px; 
+}
