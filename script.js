@@ -50,8 +50,13 @@ const saveVideo = (e) => {
 };
 
 const handlePopupClick = () => {
-    popup.classList.add('closed');
-    popup.classList.remove('open');
+    if (popup.classList.contains('open')) {
+        popup.classList.add('closed');
+        popup.classList.remove('open');
+        
+        // Stop the video by setting the iframe source to an empty string
+        videoEl.src = '';
+    }
 };
 
 loadVideos();
